@@ -1,39 +1,46 @@
 package presentation.modele;
 
 public class Utilisateur {
-    protected static long compteur = 1;
     protected Long id;
     protected String prenom, nom;
     protected String login, motDePasse, role;
 
-
-    public Long         getId() {
+    public Long getId() {
         return id;
     }
-    public void         setId() {
-        this.id = compteur++;
+
+    public void setId(long id) {
+        this.id = id;
     }
-    public String       getNomComplet() {
+
+    public String getNomComplet() {
         return prenom + " " + nom;
     }
-    public String       getNom() {
+
+    public String getNom() {
         return nom;
     }
-    public String       getPrenom() {
+
+    public String getPrenom() {
         return prenom;
     }
-    public void         setNom(String nom) {
+
+    public void setNom(String nom) {
         this.nom = nom;
     }
-    public void         setPrenom(String prenom) {
+
+    public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
     public String getLogin() {
         return login;
     }
+
     public String getMotDePasse() {
         return motDePasse;
     }
+
     public String getRole() {
         return role;
     }
@@ -50,14 +57,19 @@ public class Utilisateur {
         this.role = role;
     }
 
-    public  Utilisateur(){setId();}
+    public Utilisateur() {}
 
-    public  Utilisateur(String login, String pass, String role){
-        setId();
-        this.login          = login;
-        this.motDePasse     = pass;
-        this.role           = role;
+    public Utilisateur(String login, String pass, String role) {
+        this.login = login;
+        this.motDePasse = pass;
+        this.role = role;
     }
 
+    @Override
+    public boolean equals(Object other) {
 
+        if (other instanceof Utilisateur u)
+            return this.login.equals(u.login) && motDePasse.equals(u.motDePasse);
+        return false;
+    }
 }

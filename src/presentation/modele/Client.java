@@ -10,6 +10,31 @@ public class Client extends Utilisateur{
     private List<Compte> comptesClient;
 
 
+    @Override
+    public String getNomComplet() {
+        return super.getNomComplet();
+    }
+
+    @Override
+    public String getNom() {
+        return super.getNom();
+    }
+
+    @Override
+    public String getPrenom() {
+        return super.getPrenom();
+    }
+
+    @Override
+    public void setNom(String nom) {
+        super.setNom(nom);
+    }
+
+    @Override
+    public void setPrenom(String prenom) {
+        super.setPrenom(prenom);
+    }
+
     public String       getCin() {
         return cin;
     }
@@ -67,20 +92,41 @@ public class Client extends Utilisateur{
         setSexe(sexe);
         comptesClient = new ArrayList<Compte>();
     }
+    public Client(Client client) {
+
+        setId(client.getId());
+        setLogin(client.getLogin());
+        setMotDePasse(client.getMotDePasse());
+        setNom(client.getNom());
+        setPrenom(client.getPrenom());
+        setCin(client.getCin());
+        setEmail(client.getEmail());
+        setTel(client.getTel());
+        setSexe(client.getSexe());
+
+    }
 
     @Override
     public String toString() {
 
-        String      clientStr  = "------------------------------------------------------\n";
-                    clientStr += "| Identifiant du Client     : "   + this.id        + "\n";
-                    clientStr += "| Nom Complet               : "   + this.getNomComplet() + "\n" ;
-                    clientStr += "| Adresse email             : "   + this.email     + "\n" ;
-                    clientStr += "| Numéro téléphone          : "   + this.tel       + "\n" ;
-                    clientStr += "| Numéro de CIN             : "   + this.cin       + "\n" ;
-                    clientStr += "------------------------------------------------------\n";
+        String      clientStr  =
+                "├ Identifiant               : "   + this.id        + "\n";
+        clientStr += "├ Nom Complet               : "   + this.getNomComplet() + "\n" ;
+        clientStr += "├ Numéro de CIN             : "   + this.cin       + "\n" ;
+        clientStr += "├ Adresse email             : "   + this.email     + "\n" ;
+        clientStr += "├ Numéro téléphone          : "   + this.tel       + "\n" ;
+        clientStr += "├ Sexe                      : "   + this.sexe       + "\n" ;
+        clientStr += "├┼┼┼┤► Informations de connexion \n";
+        clientStr += "├ Nom d'utilisateur         : "   + this.getLogin()+ "\n" ;
+        clientStr += "├ Mot de pass               : "   + this.getMotDePasse()+ "\n" ;
 
         return clientStr;
     }
-
+    @Override
+    public boolean equals(Object other) {
+        if(other instanceof Client client )
+            return id.equals(client.id);
+        return false;
+    }
 
 }
