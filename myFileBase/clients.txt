@@ -4,3 +4,7 @@ ID			NOM			PRENOM			LOGIN			MOT DE PASS			CIN			EMAIL			TELEPHONE			SEXE			ID_AG
 6			Kilali 	Narjis		kilaliN		334433		AB3322			kilali.narjis@gmail.com	21265433222		FEMME		NULL
 7			Hairane 	Chaimae		Stella		stellaStar		C665544			chaimae.hairane@gmail.com	0034332221445		FEMME		NULL
 8			Moharami 	Mesud		moharammi		ms3322		XE43325			Mesut.Moharami@gmail.com	004322334445		HOMME		NULL
+9			Oubbali	Nizar		nizaroub		12345678		AS8354			nizar@gmail.com	066666666		HOMME		NULL
+10			Moddar	Walid		WalidM		123		WADD			walid@emsi.com	088888888		HOMME		NULL
+11			Kerroumi	Mehdi		MehdiK		12345		ASSSS			mehdi@emsi.com	099999999999		HOMME		NULL
+12			Bouhli	Mahdi		MahdiB		12345		HAYRIAD			mahdi@emsi.com	0111111111		HOMME		NULL

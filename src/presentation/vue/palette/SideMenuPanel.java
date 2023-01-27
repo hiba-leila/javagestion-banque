@@ -51,7 +51,6 @@ public class SideMenuPanel extends JPanel {
         setBackground(Color.white);
 
         buttons.forEach((names, btn)-> {
-
             add(btn);
         });
 

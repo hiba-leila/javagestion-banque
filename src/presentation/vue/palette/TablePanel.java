@@ -10,7 +10,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class TablePanel extends JPanel {
-
     private JTable table;
     private TableModel tableModel;
     private JScrollPane scrollPane;
@@ -43,18 +42,14 @@ public class TablePanel extends JPanel {
         scrollPane = new JScrollPane(table);
 
         searchPanel = new SearchPanel(Color.white);
-
         initActions();
     }
 
     private void initActions(){
-
-
         searchPanel.getCrudPanel().deleteBtn().addActionListener(e->{
 
             int row = table.getSelectedRow();
             if(row == -1){
-
                 JOptionPane.showMessageDialog(this,
                         "Veuillez choisir un client d'abord !!!",
                         "A L E R T",
@@ -99,7 +94,6 @@ public class TablePanel extends JPanel {
     }
 
     public TablePanel(){
-
         initTable();
         setLayout(new BorderLayout());
         add(scrollPane, BorderLayout.CENTER);

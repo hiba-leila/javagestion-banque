@@ -12,7 +12,6 @@ public class TableModel extends AbstractTableModel {
     private Object[][]  data;
 
 
-
     public void initColumns(String... colNames){
         columnsNames = new String[colNames.length];
 

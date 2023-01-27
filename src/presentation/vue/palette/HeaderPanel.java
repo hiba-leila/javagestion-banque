@@ -4,25 +4,31 @@ package presentation.vue.palette;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class HeaderPanel extends JPanel {
+public class HeaderPanel extends JPanel{
 
+    private JButton button;
     private JLabel lbl_logo;
     private JButton btn_toggleMenu;
 
+    public JButton getButton() {
+        return button;
+    }
 
     public JButton getToggleMenu() {
         return btn_toggleMenu;
     }
 
     private void initLabel(Icon icon, String text, Color color, Font font){
-
         lbl_logo = new JLabel(text);
         lbl_logo.setIcon(icon);
         lbl_logo.setForeground(color);
         lbl_logo.setFont(font);
         lbl_logo.setHorizontalTextPosition(JLabel.CENTER);
         lbl_logo.setVerticalTextPosition(JLabel.BOTTOM);
+
 
     }
 
@@ -36,8 +42,17 @@ public class HeaderPanel extends JPanel {
         btn_toggleMenu.setVerticalTextPosition(JLabel.BOTTOM);
         btn_toggleMenu.setBorderPainted(false);
         btn_toggleMenu.setFocusable(false);
-    }
 
+        button = new JButton("Refresh");
+        button.setForeground(Color.BLUE);
+        button.setSize(100, 50);
+        button.setFont(new Font("Optima", Font.BOLD, 18));
+        button.setHorizontalTextPosition(JLabel.CENTER);
+        button.setVerticalTextPosition(JLabel.BOTTOM);
+        button.setBorderPainted(false);
+        button.setFocusable(false);
+
+    }
 
 
     public  HeaderPanel(Color bgColor,
@@ -52,6 +67,7 @@ public class HeaderPanel extends JPanel {
 
         add(btn_toggleMenu, BorderLayout.WEST);
         add(lbl_logo, BorderLayout.EAST);
+        add(button, BorderLayout.CENTER);
     }
 
 }

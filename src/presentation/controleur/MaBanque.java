@@ -1,5 +1,6 @@
 package presentation.controleur;
 
+import metier.admin.ServiceAdmin;
 import metier.authentification.IAuth;
 import presentation.modele.Banque;
 
@@ -19,8 +20,8 @@ public class MaBanque {
 
                 Scanner clavier = new Scanner(System.in);
                 //loginService = new ServiceAuth(maBanque, clavier);
-                loginService.seConnecter();
-
+                //loginService.seConnecter();
+                ServiceAdmin serviceAdmin = new ServiceAdmin(maBanque);
                 clavier.close();
 
         }

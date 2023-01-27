@@ -7,11 +7,13 @@ import presentation.vue.palette.TablePanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class MyFrame extends JFrame {
-
+public class MyFrame extends JFrame  {
+    ClientFormView clientFormView ;
     ClassLoader cl = getClass().getClassLoader();
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     Container  container;
@@ -27,8 +29,6 @@ public class MyFrame extends JFrame {
         header = new HeaderPanel(Color.WHITE,
                 new ImageIcon(cl.getResource("images/icons/bankIcon64.png")), "myBank", Color.BLACK, logoFont,
                 new ImageIcon(cl.getResource("images/icons/menu.png")), "", Color.BLACK, logoFont);
-
-
         initActions();
     }
 
@@ -41,14 +41,14 @@ public class MyFrame extends JFrame {
         container.add(header, BorderLayout.NORTH);
     }
 
-
     private void initActions(){
 
         var buttons = menuPanel.getButtons();
 
         buttons.get("Ajouter")
                 .addActionListener(click -> System.out.println("btn Ajouter cliqué"));
-
+        buttons.get("Ajouter")
+                .addActionListener(click -> clientFormView = new ClientFormView("Ajouter un client"));
         buttons.get("Modifier")
                 .addActionListener(click -> System.out.println("btn Modifier cliqué"));
 
@@ -67,7 +67,6 @@ public class MyFrame extends JFrame {
                         buttons.get("Ajouter").setFont(new Font("Optima", Font.BOLD, 20));
 
                     }
-
                     @Override
                     public void mouseExited(MouseEvent e) {
                         buttons.get("Ajouter").setForeground(Color.BLUE);
@@ -75,15 +74,62 @@ public class MyFrame extends JFrame {
 
                     }
                 });
+        buttons.get("Modifier")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                        buttons.get("Modifier").setForeground(Color.RED);
+                        buttons.get("Modifier").setFont(new Font("Optima", Font.BOLD, 20));
+
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Modifier").setForeground(Color.BLUE);
+                        buttons.get("Modifier").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
+        buttons.get("Supprimer")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                        buttons.get("Supprimer").setForeground(Color.RED);
+                        buttons.get("Supprimer").setFont(new Font("Optima", Font.BOLD, 20));
+
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Supprimer").setForeground(Color.BLUE);
+                        buttons.get("Supprimer").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
+        buttons.get("Chercher")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                        buttons.get("Chercher").setForeground(Color.RED);
+                        buttons.get("Chercher").setFont(new Font("Optima", Font.BOLD, 20));
+
+                    }
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Chercher").setForeground(Color.BLUE);
+                        buttons.get("Chercher").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
+
 
         header.getToggleMenu().addActionListener(e->{
-
             if(menuPanel.isVisible()) menuPanel.setVisible(false);
             else menuPanel.setVisible(true);
         });
 
     }
-
 
 
     public MyFrame(String title){
@@ -99,4 +145,6 @@ public class MyFrame extends JFrame {
     public static void main(String[] args) {
         new MyFrame("MyBank Manager");
     }
+
+
 }
