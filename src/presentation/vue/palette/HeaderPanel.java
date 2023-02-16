@@ -9,13 +9,9 @@ import java.awt.event.ActionListener;
 
 public class HeaderPanel extends JPanel{
 
-    private JButton button;
     private JLabel lbl_logo;
     private JButton btn_toggleMenu;
 
-    public JButton getButton() {
-        return button;
-    }
 
     public JButton getToggleMenu() {
         return btn_toggleMenu;
@@ -43,14 +39,6 @@ public class HeaderPanel extends JPanel{
         btn_toggleMenu.setBorderPainted(false);
         btn_toggleMenu.setFocusable(false);
 
-        button = new JButton("Refresh");
-        button.setForeground(Color.BLUE);
-        button.setSize(100, 50);
-        button.setFont(new Font("Optima", Font.BOLD, 18));
-        button.setHorizontalTextPosition(JLabel.CENTER);
-        button.setVerticalTextPosition(JLabel.BOTTOM);
-        button.setBorderPainted(false);
-        button.setFocusable(false);
 
     }
 
@@ -67,7 +55,6 @@ public class HeaderPanel extends JPanel{
 
         add(btn_toggleMenu, BorderLayout.WEST);
         add(lbl_logo, BorderLayout.EAST);
-        add(button, BorderLayout.CENTER);
     }
 
 }

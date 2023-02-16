@@ -8,3 +8,4 @@ ID			NOM			PRENOM			LOGIN			MOT DE PASS			CIN			EMAIL			TELEPHONE			SEXE			ID_AG
 10			Moddar	Walid		WalidM		123		WADD			walid@emsi.com	088888888		HOMME		NULL
 11			Kerroumi	Mehdi		MehdiK		12345		ASSSS			mehdi@emsi.com	099999999999		HOMME		NULL
 12			Bouhli	Mahdi		MahdiB		12345		HAYRIAD			mahdi@emsi.com	0111111111		HOMME		NULL
+13			Alaoui	Abdel		Abdel		12345		ASD			abdel@gmail.com	089765		HOMME		NULL
